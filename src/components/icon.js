@@ -11,7 +11,6 @@ export default class Icon extends HTMLElement {
 
     constructor() {
         super()
-        
         this.attachShadow({ mode: 'open' })
         this.shadowRoot.appendChild(getInlineStyle(styles))
         this.shadowRoot.appendChild(getTemplateContent(template))
@@ -25,6 +24,10 @@ export default class Icon extends HTMLElement {
 
     #defineEvents() {
 
+    }
+
+    connectedCallback() {
+        console.log(this.shadowRoot)
     }
 
     static get observedAttributes() {

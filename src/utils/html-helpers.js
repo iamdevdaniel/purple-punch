@@ -1,4 +1,4 @@
-import { ERROR } from './error-messages.js'
+import { ErrorMessage } from './error-helpers.js'
 
 export const getTemplateContent = (htmlString) => {
     
@@ -10,6 +10,6 @@ export const getTemplateContent = (htmlString) => {
             .cloneNode(true)
     }
     catch(_) {
-        console.error(ERROR.TEMPLATE_UNDEFINED)
+        console.error(ErrorMessage.TEMPLATE_UNDEFINED)
     }
 }

@@ -1,6 +1,6 @@
 export const getIconFamilies = (icons, types) => {
 
-    return Object.entries(icons).reduce((result, entry) => {
+    const aux = Object.entries(icons).reduce((result, entry) => {
     
         const typeRegex = RegExp(`(${types.fill})`, 'g')
         const [key, value] = entry
@@ -17,4 +17,6 @@ export const getIconFamilies = (icons, types) => {
         
         return result
     }, {})
+
+    return aux
 }

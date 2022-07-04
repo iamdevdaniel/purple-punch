@@ -1,0 +1,66 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    width: 80px;
+    background-color: var(--color-primary-0);
+}
+
+* {
+    --color-primary-0: #EEECFF;
+    --color-primary-1: #3B3854;
+    --color-primary-2: #2E2B43;
+    --color-primary-3: #29263D;
+    --color-primary-4: #252238;
+
+    --pink: #F43984;
+    --pink-contrast: #432A49;
+    --purple: #793AFF;
+    --purple-contrast: #332855;
+    --blue: #1C9CE3;
+    --blue-contrast: #374465;
+    --orange: #F55063;
+    --orange-contrast: #5a3443;
+    --green: #41CD7D;
+    --green-contrast: #2a4446;
+    --black: #201E26;
+    --black-contrast: #2B2C39;
+}
+
+.primary  .a { background-color: var(--color-primary-0);}
+.primary  .b { background-color: var(--color-primary-1);}
+.primary  .c { background-color: var(--color-primary-2);}
+.primary  .d { background-color: var(--color-primary-3);}
+.primary  .e { background-color: var(--color-primary-4);}
+
+.colors  .pink { background-color: var(--pink); }
+.colors  .pinkc { background-color: var(--pink-contrast); }
+.colors  .purple { background-color: var(--purple); }
+.colors  .purplec { background-color: var(--purple-contrast); }
+.colors  .blue { background-color: var(--blue); }
+.colors  .bluec { background-color: var(--blue-contrast); }
+.colors  .orange { background-color: var(--orange); }
+.colors  .orangec { background-color: var(--orange-contrast); }
+.colors  .green { background-color: var(--green); }
+.colors  .greenc { background-color: var(--green-contrast); }
+.colors  .black { background-color: var(--black); }
+.colors  .blackc { background-color: var(--black-contrast); }
+
+.palette {
+    display: flex;
+    background-color: black;
+    padding: 24px;
+}
+
+.palette > div + div {
+    margin-left: 24px;
+}
+
+.primary > div,
+.colors > div {
+    height: 48px;
+    width: 48px;
+}

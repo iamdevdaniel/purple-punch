@@ -23,7 +23,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: './index.html', to: './' },
-                { from: './global-styles.css', to: './' },
+                { from: './palette.css', to: './' },
             ],
         }),
         new webpack.DefinePlugin({

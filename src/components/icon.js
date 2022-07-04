@@ -8,7 +8,21 @@ import template from '../templates/icon.html'
 export default class Icon extends HTMLElement {
 
     static tagName = 'punch-icon'
-
+    static sizeClassSelector = {
+        s: 'small',
+        m: 'medium',
+        l: 'large',
+        xl: 'extra-large',
+        default: 'medium',
+    }
+    static colorClassSelector = {
+        primary0: 'primary-0',
+        primary1: 'primary-1',
+        primary2: 'primary-2',
+        primary3: 'primary-3',
+        primary4: 'primary-4',
+        pink:
+    }
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
@@ -20,13 +34,7 @@ export default class Icon extends HTMLElement {
 
     #defineProperties() {
         this.svgElement = this.shadowRoot.querySelector('svg')
-        this.sizeClassSelector = {
-            s: 'small',
-            m: 'medium',
-            l: 'large',
-            xl: 'extra-large',
-            default: 'medium',
-        }
+
     }
 
     #defineEvents() {

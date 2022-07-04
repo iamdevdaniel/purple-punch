@@ -4,3 +4,15 @@
     justify-content: center;
 }
 
+svg {
+    background-color: pink;
+    font-size: 24px;
+}
+
+svg.small { font-size: 18px; }
+
+svg.medium { font-size: 24px; }
+
+svg.large { font-size: 36px; }
+
+svg.extra-large { font-size: 48px; }

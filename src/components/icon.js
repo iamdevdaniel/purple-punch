@@ -19,7 +19,14 @@ export default class Icon extends HTMLElement {
     }
 
     #defineProperties() {
-        this.svg = this.shadowRoot.querySelector('svg')
+        this.svgElement = this.shadowRoot.querySelector('svg')
+        this.sizeClassSelector = {
+            s: 'small',
+            m: 'medium',
+            l: 'large',
+            xl: 'extra-large',
+            default: 'medium',
+        }
     }
 
     #defineEvents() {
@@ -27,27 +34,42 @@ export default class Icon extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log(this.shadowRoot)
+
     }
 
     static get observedAttributes() {
-        return ['path', 'icon']
+        return ['icon', 'size']
     }
 
-    attributeChangedCallback(attributeName, _, newValue) {
+    attributeChangedCallback(attributeName, oldValue, newValue) {
 
         switch(attributeName) {
             case 'icon': {
                 const iconFamily = icons[newValue]
 
                 if(iconFamily) {
-                    this.svg.innerHTML = iconFamily.regular
+                    this.svgElement.innerHTML = iconFamily.regular
                 }
                 else {
                     const errorContext = `${this.tagName.toLowerCase()} '${newValue}'`
                     handleError(errorContext, ErrorMessage.ICON_NOT_FOUND)
                 }
                 break
+            }
+            case 'size': {
+                const sizeClass = this.sizeClassSelector[newValue]
+                const oldSizeClass = this.sizeClassSelector[oldValue]
+
+                if(sizeClass) {
+                    this.svgElement.classList.remove(oldSizeClass)
+                    this.svgElement.classList.add(sizeClass)
+                }
+                else {
+                    this.svgElement.classList.remove(oldSizeClass)
+                    this.svgElement.classList.add(this.sizeClassSelector.default)
+                    const errorContext = `${this.tagName.toLowerCase()} '${newValue}'`
+                    handleError(errorContext, ErrorMessage.ICON_SIZE_NOT_FOUND)
+                }
             }
         }
     }

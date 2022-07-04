@@ -31,23 +31,19 @@ export default class Icon extends HTMLElement {
         return ['path', 'icon']
     }
 
-    attributeChangedCallback(name, _, newValue) {
+    attributeChangedCallback(attributeName, _, newValue) {
 
-        console.log(name, newValue)
-
-        switch(name) {
+        switch(attributeName) {
             case 'icon': {
-                const svgIcon = icons[newValue].regular
-                if(svgIcon) {
+                const iconFamily = icons[newValue]
 
+                if(iconFamily) {
+                    this.svg.innerHTML = iconFamily.regular
                 }
                 else {
-                    handleError(tagName, ErrorMessage.ICON_NOT_FOUND)
+                    const errorContext = `${this.tagName.toLowerCase()} '${newValue}'`
+                    handleError(errorContext, ErrorMessage.ICON_NOT_FOUND)
                 }
-            
-                break
-            }
-            default: {
                 break
             }
         }

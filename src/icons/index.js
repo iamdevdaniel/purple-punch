@@ -14,7 +14,7 @@ import save from './floppy-disk-back.svg'
 import saveFill from './floppy-disk-back-fill.svg'
 import xCircle from './x-circle.svg'
 import xCircleFill from './x-circle-fill.svg'
-import { getIconFamily } from '../utils/icon-helpers.js'
+import { getIconFamilies } from '../utils/icon-helpers.js'
 
 const icons = {
     arrow,
@@ -37,4 +37,4 @@ const icons = {
 
 const types = { fill: 'Fill' }
 
-export default getIconFamily(icons, types)
+export default getIconFamilies(icons, types)

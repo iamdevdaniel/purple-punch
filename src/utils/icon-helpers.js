@@ -1,4 +1,4 @@
-export const getIconFamily = (icons, types) => {
+export const getIconFamilies = (icons, types) => {
 
     return Object.entries(icons).reduce((result, entry) => {
     

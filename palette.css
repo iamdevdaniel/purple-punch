@@ -16,17 +16,19 @@ html {
     --color-primary-3: #29263D;
     --color-primary-4: #252238;
 
-    --pink: #F43984;
+    --yellow-bright: #FFCA42;
+    --yellow-contrast: #564d36;
+    --pink-bright: #F43984;
     --pink-contrast: #432A49;
-    --purple: #793AFF;
+    --purple-bright: #793AFF;
     --purple-contrast: #332855;
-    --blue: #1C9CE3;
+    --blue-bright: #1C9CE3;
     --blue-contrast: #374465;
-    --orange: #F55063;
+    --orange-bright: #F55063;
     --orange-contrast: #5a3443;
-    --green: #41CD7D;
+    --green-bright: #41CD7D;
     --green-contrast: #2a4446;
-    --black: #201E26;
+    --black-bright: #201E26;
     --black-contrast: #2B2C39;
 }
 
@@ -36,17 +38,19 @@ html {
 .primary  .d { background-color: var(--color-primary-3);}
 .primary  .e { background-color: var(--color-primary-4);}
 
-.colors  .pink { background-color: var(--pink); }
+.colors  .pink { background-color: var(--pink-bright); }
 .colors  .pinkc { background-color: var(--pink-contrast); }
-.colors  .purple { background-color: var(--purple); }
+.colors  .yellow { background-color: var(--yellow-bright); }
+.colors  .yellowc { background-color: var(--yellow-contrast); }
+.colors  .purple { background-color: var(--purple-bright); }
 .colors  .purplec { background-color: var(--purple-contrast); }
-.colors  .blue { background-color: var(--blue); }
+.colors  .blue { background-color: var(--blue-bright); }
 .colors  .bluec { background-color: var(--blue-contrast); }
-.colors  .orange { background-color: var(--orange); }
+.colors  .orange { background-color: var(--orange-bright); }
 .colors  .orangec { background-color: var(--orange-contrast); }
-.colors  .green { background-color: var(--green); }
+.colors  .green { background-color: var(--green-bright); }
 .colors  .greenc { background-color: var(--green-contrast); }
-.colors  .black { background-color: var(--black); }
+.colors  .black { background-color: var(--black-bright); }
 .colors  .blackc { background-color: var(--black-contrast); }
 
 .palette {

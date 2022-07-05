@@ -1,3 +1,4 @@
+import { ColorClassSelector } from '../utils/palette-helpers.js'
 import { ErrorMessage, handleError } from '../utils/error-helpers.js'
 import { getInlineStyle } from '../utils/css-helpers.js'
 import { getTemplateContent } from '../utils/html-helpers.js'
@@ -5,24 +6,16 @@ import icons from '../icons/'
 import styles from '../styles/icon.css'
 import template from '../templates/icon.html'
 
+export const sizeClassSelector = {
+    s: 'small',
+    m: 'medium',
+    l: 'large',
+    xl: 'extra-large',
+    default: 'medium',
+}
 export default class Icon extends HTMLElement {
 
     static tagName = 'punch-icon'
-    static sizeClassSelector = {
-        s: 'small',
-        m: 'medium',
-        l: 'large',
-        xl: 'extra-large',
-        default: 'medium',
-    }
-    static colorClassSelector = {
-        primary0: 'primary-0',
-        primary1: 'primary-1',
-        primary2: 'primary-2',
-        primary3: 'primary-3',
-        primary4: 'primary-4',
-        pink:
-    }
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
@@ -46,7 +39,7 @@ export default class Icon extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['icon', 'size']
+        return ['icon', 'size', 'color']
     }
 
     attributeChangedCallback(attributeName, oldValue, newValue) {
@@ -59,14 +52,14 @@ export default class Icon extends HTMLElement {
                     this.svgElement.innerHTML = iconFamily.regular
                 }
                 else {
-                    const errorContext = `${this.tagName.toLowerCase()} '${newValue}'`
+                    const errorContext = `${Icon.tagName} '${newValue}'`
                     handleError(errorContext, ErrorMessage.ICON_NOT_FOUND)
                 }
                 break
             }
             case 'size': {
-                const sizeClass = this.sizeClassSelector[newValue]
-                const oldSizeClass = this.sizeClassSelector[oldValue]
+                const sizeClass = sizeClassSelector[newValue]
+                const oldSizeClass = sizeClassSelector[oldValue]
 
                 if(sizeClass) {
                     this.svgElement.classList.remove(oldSizeClass)
@@ -74,10 +67,27 @@ export default class Icon extends HTMLElement {
                 }
                 else {
                     this.svgElement.classList.remove(oldSizeClass)
-                    this.svgElement.classList.add(this.sizeClassSelector.default)
-                    const errorContext = `${this.tagName.toLowerCase()} '${newValue}'`
+                    this.svgElement.classList.add(sizeClassSelector.default)
+                    const errorContext = `${Icon.tagName} '${newValue}'`
                     handleError(errorContext, ErrorMessage.ICON_SIZE_NOT_FOUND)
                 }
+                break
+            }
+            case 'color': {
+                const colorClass = ColorClassSelector[newValue]
+                const oldColorClass = ColorClassSelector[oldValue]
+
+                if(colorClass) {
+                    this.svgElement.classList.remove(oldColorClass)
+                    this.svgElement.classList.add(colorClass)
+                }
+                else {
+                    this.svgElement.classList.remove(oldSizeClass)
+                    this.svgElement.classList.add(ColorClassSelector.PRIMARY_0)
+                    const errorContext = `${Icon.tagName} '${newValue}'`
+                    handleError(errorContext, ErrorMessage.COLOR_NOT_FOUND)
+                }
+                break
             }
         }
     }

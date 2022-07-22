@@ -23,7 +23,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: './index.html', to: './' },
-                { from: './palette.css', to: './' },
+                { from: './sandbox-components.css', to: './' },
+                { from: './sandbox-palette.css', to: './' },
             ],
         }),
         new webpack.DefinePlugin({

@@ -9,15 +9,12 @@ export default class Button extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
-        this.shadowRoot.appendChild(getInlineStyle(styles))
         this.shadowRoot.appendChild(getTemplateContent(template))
+        this.shadowRoot.appendChild(getInlineStyle(styles))
     }
-
-    static get observedattributes() {
-        return ['onClick']
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-
+    
+    connectedCallback() {
+        const slotElement = this.querySelector('*')
+        this.setAttribute('haschildren', Boolean(slotElement))
     }
 }

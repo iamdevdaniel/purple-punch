@@ -18,7 +18,7 @@ import saveFill from './floppy-disk-back-fill.svg'
 import xCircle from './x-circle.svg'
 import xCircleFill from './x-circle-fill.svg'
 
-const icons = {
+const bulkIcons = {
     arrow,
     arrowFill,
     bookmark,
@@ -41,4 +41,4 @@ const icons = {
 
 const types = { fill: 'Fill' }
 
-export default getIconFamilies(icons, types)
+export default getIconFamilies(bulkIcons, types)

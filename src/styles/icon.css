@@ -4,27 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 1.5em;
+    aspect-ratio: 1/1;
 }
 
-svg {
-    font-size: 24px;
+:host svg {
+    font-size: 1.5em;
     color: var(--color-primary-4);
 }
-
-svg.small { font-size: 18px; }
-
-svg.medium { font-size: 24px; }
-
-svg.large { font-size: 36px; }
-
-svg.extra-large { font-size: 48px; }
-
-svg.primary-0 { color: var(--color-primary-0); }
-
-svg.primary-1 { color: var(--color-primary-1); }
-
-svg.primary-2 { color: var(--color-primary-2); }
-
-svg.primary-3 { color: var(--color-primary-3); }
-
-svg.primary-4 { color: var(--color-primary-4); }

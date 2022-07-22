@@ -1,0 +1,19 @@
+@import url('/palette.css');
+@import url('/global-styles.css');
+
+.sandbox {
+    background-color: crimson;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+punch-icon::part(vector) {
+    color: var(--color-primary-0);
+}
+
+punch-button {
+    width: 2em;
+}
+
+punch-button + punch-button { margin-left: 84px;}

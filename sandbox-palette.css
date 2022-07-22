@@ -1,0 +1,45 @@
+@import url('/palette.css');
+@import url('/global-styles.css');
+
+.palette {
+    display: flex;
+    background-color: #0a0909;
+    padding: 24px;
+}
+
+.palette > div + div {
+    margin-left: 24px;
+}
+
+.primary > div,
+.colors > div {
+    height: 54px;
+    aspect-ratio: 3.5;
+}
+
+.primary > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary .a { background-color: var(--color-primary-0); color: black; }
+.primary .b { background-color: var(--color-primary-1);}
+.primary .c { background-color: var(--color-primary-2);}
+.primary .d { background-color: var(--color-primary-3);}
+.primary .e { background-color: var(--color-primary-4);}
+
+.colors .pink { background-color: var(--pink-bright); }
+.colors .pinkc { background-color: var(--pink-contrast); }
+.colors .yellow { background-color: var(--yellow-bright); }
+.colors .yellowc { background-color: var(--yellow-contrast); }
+.colors .purple { background-color: var(--purple-bright); }
+.colors .purplec { background-color: var(--purple-contrast); }
+.colors .blue { background-color: var(--blue-bright); }
+.colors .bluec { background-color: var(--blue-contrast); }
+.colors .orange { background-color: var(--orange-bright); }
+.colors .orangec { background-color: var(--orange-contrast); }
+.colors .green { background-color: var(--green-bright); }
+.colors .greenc { background-color: var(--green-contrast); }
+.colors .black { background-color: var(--black-bright); }
+.colors .blackc { background-color: var(--black-contrast); }
